@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:orcamento_app/components/carregamento.dart';
 import 'package:orcamento_app/helpers/pdf.dart';
 import 'package:orcamento_app/screens/add_new_gasto_screen.dart';
 import '../components/card_gasto.dart';
@@ -26,8 +27,7 @@ class _GastoScreenState extends State<GastoScreen> {
         ),
         IconButton(
           onPressed: () {
-            GastoDao().deleteAll();
-            refresh();
+            showConfirmDeleteAllGastos();
           },
           icon: const Icon(Icons.delete),
         )
@@ -60,12 +60,7 @@ class _GastoScreenState extends State<GastoScreen> {
           builder: (context, snapshot) {
             List<CardGasto>? gastosCards = snapshot.data;
             if (snapshot.connectionState != ConnectionState.done) {
-              return const Center(
-                child: Column(children: [
-                  CircularProgressIndicator(),
-                  Text("Carregando...")
-                ]),
-              );
+              return const Carregamento();
             } else {
               if (snapshot.hasData && gastosCards != null) {
                 if (gastosCards.isNotEmpty) {
@@ -78,10 +73,11 @@ class _GastoScreenState extends State<GastoScreen> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => EditScreen(
-                                      id: index,
-                                    )),
-                          );
+                              builder: (context) => EditScreen(
+                                id: index,
+                              ),
+                            ),
+                          ).then((value) => refresh());
                         },
                         child: Dismissible(
                           key: Key(index.toString()),
@@ -130,5 +126,44 @@ class _GastoScreenState extends State<GastoScreen> {
 
   void refresh() {
     setState(() {});
+  }
+
+  void showConfirmDeleteAllGastos() {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: const Text('Meu Orçamento'),
+          content: const Text('Deseja excluir todos os gastos?'),
+          actions: [
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Center(
+                child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      ElevatedButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        child: const Text('NÃO'),
+                      ),
+                      ElevatedButton(
+                        onPressed: () {
+                          GastoDao().deleteAll();
+                          Navigator.pop(context);
+                          refresh();
+                        },
+                        child: const Text('SIM'),
+                      )
+                    ]),
+              ),
+            )
+          ],
+        );
+        ;
+      },
+    );
   }
 }

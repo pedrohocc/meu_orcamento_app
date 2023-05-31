@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:orcamento_app/screens/edit_gasto_screen.dart';
 
 class CardGasto extends StatelessWidget {
   final String cardNome;

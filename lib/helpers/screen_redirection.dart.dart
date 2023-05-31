@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:orcamento_app/screens/charts_screen.dart';
 import 'package:orcamento_app/screens/gastos_screen.dart';
 import 'package:orcamento_app/screens/initial_screen.dart';
-import 'package:orcamento_app/screens/settings_screen.dart';
 
 class ScreenRedirection extends StatefulWidget {
   final int index;

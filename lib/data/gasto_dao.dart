@@ -5,15 +5,25 @@ import 'package:orcamento_app/model/gasto.dart';
 class GastoDao {
   Future<bool> save(Gasto gasto) async {
     try {
-      Map futureCard = {
+      Map mapGasto = {
         "nome": gasto.nome,
         "valor": gasto.valor,
       };
 
       Box box = await Hive.openBox("Gastos");
 
-      box.add(futureCard);
+      box.add(mapGasto);
 
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  Future<bool> edit(Gasto gasto, int id) async {
+    try {
+      Box box = await Hive.openBox("Gastos");
+      box.putAt(id, {"nome": gasto.nome, "valor": gasto.valor});
       return true;
     } catch (e) {
       return false;
@@ -50,8 +60,11 @@ class GastoDao {
   }
 
   Future<Gasto> getByID(int index) async {
-    Box box = await Hive.openBox("Gastos");
-    final Gasto gasto = box.getAt(index);
+    final Box box = await Hive.openBox("Gastos");
+    final dynamic item = box.getAt(index);
+    final String nomeGasto = item['nome'];
+    final double valorGasto = item['valor'];
+    final Gasto gasto = new Gasto(nomeGasto.toUpperCase(), valorGasto);
     return gasto;
   }
 

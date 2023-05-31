@@ -1,12 +1,9 @@
-import 'dart:typed_data';
-import 'dart:ui';
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:orcamento_app/components/card_gasto.dart';
 import 'package:orcamento_app/data/gasto_dao.dart';
 import 'package:orcamento_app/data/orcamento_dao.dart';
 import 'package:syncfusion_flutter_pdf/pdf.dart';
-import '../helpers/show_pdf.dart';
+import 'save_pdf.dart';
 
 class PDF {
   final PdfStandardFont _font = PdfStandardFont(PdfFontFamily.helvetica, 30);
@@ -24,7 +21,7 @@ class PDF {
     page.graphics.drawString(
         "Orçamento inicial: R\$ ${valorOrcamento.toStringAsFixed(2)}\nTotal de gastos: R\$ ${valorTotalGastos.toStringAsFixed(2)}\nSaldo final: R\$ ${valorSaldoFinal.toStringAsFixed(2)}",
         _font,
-        bounds: Rect.fromLTWH(0, 0, 500, 500),
+        bounds: const Rect.fromLTWH(0, 0, 500, 500),
         format: PdfStringFormat(alignment: PdfTextAlignment.center));
 
     templateTable(page);
@@ -43,7 +40,7 @@ class PDF {
 
     headerTemplate.graphics.drawImage(
         PdfBitmap(await _readImageData("logo-orcamento-app.png")),
-        Rect.fromLTWH(200, 0, 100, 100));
+        const Rect.fromLTWH(200, 0, 100, 100));
 
     return headerTemplate;
   }

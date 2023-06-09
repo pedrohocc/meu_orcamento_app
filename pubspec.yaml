@@ -12,6 +12,7 @@ dependencies:
   hive: ^2.2.3
   hive_flutter: ^1.1.0
   open_file: ^3.2.1
+  open_filex: ^4.3.2
   path_provider: ^2.0.14 
   syncfusion_flutter_charts: ^21.1.41
   syncfusion_flutter_pdf: ^21.1.38

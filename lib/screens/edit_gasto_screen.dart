@@ -47,7 +47,7 @@ class _EditScreenState extends State<EditScreen> {
             if (snapshot.connectionState == ConnectionState.done) {
               final Gasto? gasto = snapshot.data;
               if (snapshot.hasData && gasto != null) {
-                final TextEditingController _valorUserController =
+                final TextEditingController valorUserController =
                     TextEditingController(text: gasto.valor.toString());
                 return Form(
                   key: _chaveForm,
@@ -74,7 +74,7 @@ class _EditScreenState extends State<EditScreen> {
                                 }
                               },
                               keyboardType: TextInputType.number,
-                              controller: _valorUserController,
+                              controller: valorUserController,
                               cursorColor: Colors.black,
                             ),
                           ),
@@ -96,7 +96,7 @@ class _EditScreenState extends State<EditScreen> {
                                       ),
                                     ),
                                     onPressed: () {
-                                      adicionar10(_valorUserController);
+                                      adicionar10(valorUserController);
                                     },
                                     child: const Icon(Icons.add),
                                   ),
@@ -116,7 +116,7 @@ class _EditScreenState extends State<EditScreen> {
                                         ),
                                       ),
                                       onPressed: () {
-                                        remover10(_valorUserController);
+                                        remover10(valorUserController);
                                       },
                                       child: const Icon(
                                         Icons.remove,
@@ -140,7 +140,7 @@ class _EditScreenState extends State<EditScreen> {
                                           Gasto(
                                               gasto.nome,
                                               double.parse(
-                                                  _valorUserController.text)),
+                                                  valorUserController.text)),
                                           widget.id)
                                       .then((value) {
                                     if (value == true) {
@@ -177,7 +177,7 @@ class _EditScreenState extends State<EditScreen> {
                   ),
                 );
               } else {
-                return Center(
+                return const Center(
                   child: Text('Sem informação'),
                 );
               }
@@ -192,15 +192,15 @@ class _EditScreenState extends State<EditScreen> {
 }
 
 void adicionar10(TextEditingController valorUserController) {
-  final double _valor = double.parse(valorUserController.text);
-  final double _soma = _valor + 10;
+  final double valor = double.parse(valorUserController.text);
+  final double soma = valor + 10;
 
-  valorUserController.text = _soma.toString();
+  valorUserController.text = soma.toString();
 }
 
 void remover10(TextEditingController valorUserController) {
-  final double _valor = double.parse(valorUserController.text);
-  final double _subtracao = _valor - 10;
+  final double valor = double.parse(valorUserController.text);
+  final double subtracao = valor - 10;
 
-  valorUserController.text = _subtracao.toString();
+  valorUserController.text = subtracao.toString();
 }

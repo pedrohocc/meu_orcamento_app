@@ -22,7 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           boxShadow: [
             BoxShadow(
                 color: Color.fromARGB(50, 0, 0, 0),
@@ -32,7 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
         child: ClipRRect(
-          borderRadius: BorderRadius.only(
+          borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(30),
             topRight: Radius.circular(30),
           ),
@@ -40,8 +40,8 @@ class _HomeScreenState extends State<HomeScreen> {
               iconSize: 25,
               unselectedIconTheme: const IconThemeData(size: 20),
               unselectedFontSize: 10,
-              fixedColor: Color.fromARGB(255, 42, 92, 113),
-              unselectedItemColor: Color.fromARGB(255, 0, 0, 0),
+              fixedColor: const Color.fromARGB(255, 42, 92, 113),
+              unselectedItemColor: const Color.fromARGB(255, 0, 0, 0),
               elevation: 10,
               items: ItemsBottomNavigation().listarItems(),
               onTap: (value) {

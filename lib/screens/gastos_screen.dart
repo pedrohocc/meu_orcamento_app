@@ -162,7 +162,6 @@ class _GastoScreenState extends State<GastoScreen> {
             )
           ],
         );
-        ;
       },
     );
   }

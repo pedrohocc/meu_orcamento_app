@@ -64,7 +64,7 @@ class GastoDao {
     final dynamic item = box.getAt(index);
     final String nomeGasto = item['nome'];
     final double valorGasto = item['valor'];
-    final Gasto gasto = new Gasto(nomeGasto.toUpperCase(), valorGasto);
+    final Gasto gasto = Gasto(nomeGasto.toUpperCase(), valorGasto);
     return gasto;
   }
 

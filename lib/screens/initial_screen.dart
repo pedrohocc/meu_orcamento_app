@@ -67,7 +67,7 @@ class _InitialScreenState extends State<InitialScreen> {
                           height: 150,
                           child: Container(
                             decoration: BoxDecoration(
-                              color: Color.fromARGB(255, 61, 133, 164),
+                              color: const Color.fromARGB(255, 61, 133, 164),
                               borderRadius: BorderRadius.circular(15),
                               boxShadow: const [
                                 BoxShadow(
@@ -93,7 +93,7 @@ class _InitialScreenState extends State<InitialScreen> {
                                   child: Text(
                                     "ATUAL: R\$ ${snapshot.data![1]}",
                                     overflow: TextOverflow.ellipsis,
-                                    style: TextStyle(color: Colors.white),
+                                    style: const TextStyle(color: Colors.white),
                                   ),
                                 )
                               ],

@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:orcamento_app/components/carregamento.dart';
-import 'package:orcamento_app/data/gasto_dao.dart';
-import 'package:orcamento_app/helpers/is_less_than_1.dart';
-import 'package:orcamento_app/model/gasto.dart';
-
+import 'package:meu_orcamento/components/carregamento.dart';
+import 'package:meu_orcamento/data/gasto_dao.dart';
+import 'package:meu_orcamento/helpers/is_less_than_1.dart';
+import 'package:meu_orcamento/model/gasto.dart';
 class EditScreen extends StatefulWidget {
   final int id;
   const EditScreen({super.key, required this.id});

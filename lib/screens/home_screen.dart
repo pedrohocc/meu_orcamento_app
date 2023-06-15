@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:orcamento_app/helpers/items_bottom_navigation.dart';
-import 'package:orcamento_app/helpers/screen_redirection.dart.dart';
+import 'package:meu_orcamento/helpers/items_bottom_navigation.dart';
+import 'package:meu_orcamento/helpers/screen_redirection.dart.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

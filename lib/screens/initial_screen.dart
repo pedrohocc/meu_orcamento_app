@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:orcamento_app/data/gasto_dao.dart';
-import 'package:orcamento_app/data/orcamento_dao.dart';
-import 'package:orcamento_app/screens/settings_screen.dart';
+import 'package:meu_orcamento/data/gasto_dao.dart';
+import 'package:meu_orcamento/data/orcamento_dao.dart';
+import 'package:meu_orcamento/screens/settings_screen.dart';
 
 class InitialScreen extends StatefulWidget {
   const InitialScreen({super.key});

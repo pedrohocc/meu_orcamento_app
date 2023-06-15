@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:orcamento_app/components/card_gasto.dart';
-import 'package:orcamento_app/data/gasto_dao.dart';
-import 'package:orcamento_app/helpers/pie_chart.dart';
+import 'package:meu_orcamento/components/card_gasto.dart';
+import 'package:meu_orcamento/data/gasto_dao.dart';
+import 'package:meu_orcamento/helpers/pie_chart.dart';
 
 import '../model/chart_data.dart';
 

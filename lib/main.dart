@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:orcamento_app/screens/home_screen.dart';
+import 'package:meu_orcamento/screens/home_screen.dart';
 import 'data/hive_config.dart';
 
 Future<void> main() async {

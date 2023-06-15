@@ -1,6 +1,6 @@
 {
-    "name": "orcamento_app",
-    "short_name": "orcamento_app",
+    "name": "meu_orcamento",
+    "short_name": "meu_orcamento",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

@@ -1,6 +1,6 @@
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:orcamento_app/components/card_gasto.dart';
-import 'package:orcamento_app/model/gasto.dart';
+import 'package:meu_orcamento/components/card_gasto.dart';
+import 'package:meu_orcamento/model/gasto.dart';
 
 class GastoDao {
   Future<bool> save(Gasto gasto) async {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:orcamento_app/data/orcamento_dao.dart';
-import 'package:orcamento_app/helpers/validator.dart';
+import 'package:meu_orcamento/data/orcamento_dao.dart';
+import 'package:meu_orcamento/helpers/validator.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});

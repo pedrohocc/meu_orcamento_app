@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:orcamento_app/components/carregamento.dart';
-import 'package:orcamento_app/helpers/pdf.dart';
-import 'package:orcamento_app/screens/add_new_gasto_screen.dart';
+import 'package:meu_orcamento/components/carregamento.dart';
+import 'package:meu_orcamento/data/gasto_dao.dart';
+import 'package:meu_orcamento/helpers/pdf.dart';
+import 'package:meu_orcamento/screens/add_new_gasto_screen.dart';
 import '../components/card_gasto.dart';
-import 'package:orcamento_app/data/gasto_dao.dart';
 
 import 'edit_gasto_screen.dart';
 

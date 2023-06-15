@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:orcamento_app/model/chart_data.dart';
+import 'package:meu_orcamento/model/chart_data.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 class PieChart extends StatelessWidget {

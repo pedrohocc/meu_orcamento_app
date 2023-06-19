@@ -71,8 +71,13 @@ class _AddNewGastoScrennState extends State<AddNewGastoScrenn> {
                               validator: (value) {
                                 if (isNullOrEmpty(value)) {
                                   return "Insira um valor";
+                                } else {
+                                  if(double.parse(value!) <= 0) {
+                                    return "Insira um valor maior que zero";
+                                  } else {
+                                    return null;
+                                  }
                                 }
-                                return null;
                               },
                               controller: valorController,
                               keyboardType: TextInputType.number,

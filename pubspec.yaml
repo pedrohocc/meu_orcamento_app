@@ -9,10 +9,23 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_launcher_icons: ^0.13.1
+  flutter_native_splash: ^2.3.1
   hive_flutter: ^1.1.0
   open_file: ^3.3.2
   syncfusion_flutter_charts: ^21.2.10
   syncfusion_flutter_pdf: ^21.2.10
+
+flutter_native_splash:
+  color: "#FFFFFF"
+  image: "assets/app/splash-image.png"
+  android: true
+
+flutter_icons:
+  image_path: "assets/app/icone-image.png"
+  android: "launcher_icon"
+  adaptative_icon_background: "#FFFFFF"
+  adaptive_icon_foreground: "assets/app/transparent-icone-image.png"
 
 dev_dependencies:
   flutter_test:

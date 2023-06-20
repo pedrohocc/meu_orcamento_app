@@ -42,7 +42,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
                           if (isNullOrEmpty(value)) {
                             return "Insira um valor";
                           } else {
-                            return null;
+                            if (double.parse(value!) <= 0) {
+                              return "Insira um valor maior que 0";
+                            } else {
+                              return null;
+                            }
                           }
                         },
                         controller: valorController,

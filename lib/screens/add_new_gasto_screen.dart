@@ -73,7 +73,7 @@ class _AddNewGastoScrennState extends State<AddNewGastoScrenn> {
                                   return "Insira um valor";
                                 } else {
                                   if(double.parse(value!) <= 0) {
-                                    return "Insira um valor maior que zero";
+                                    return "Insira um valor maior que 0";
                                   } else {
                                     return null;
                                   }

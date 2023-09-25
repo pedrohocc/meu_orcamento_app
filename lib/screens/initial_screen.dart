@@ -23,7 +23,11 @@ class _InitialScreenState extends State<InitialScreen> {
     double valorInical = await OrcamentoDao().getValorOrcamento();
     double valorGastos = await GastoDao().getValorTotalGastos();
     double restante = valorInical - valorGastos;
-    return [valorInical.toStringAsFixed(2), restante.toStringAsFixed(2)];
+    return [
+      valorInical.toStringAsFixed(2),
+      valorGastos.toStringAsFixed(2),
+      restante.toStringAsFixed(2)
+    ];
   }
 
   @override
@@ -63,9 +67,10 @@ class _InitialScreenState extends State<InitialScreen> {
                     children: [
                       Center(
                         child: SizedBox(
-                          width: 320,
-                          height: 150,
+                          width: 300,
+                          height: 200,
                           child: Container(
+                            alignment: Alignment.center,
                             decoration: BoxDecoration(
                               color: const Color.fromARGB(255, 61, 133, 164),
                               borderRadius: BorderRadius.circular(15),
@@ -78,6 +83,7 @@ class _InitialScreenState extends State<InitialScreen> {
                               ],
                             ),
                             child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Padding(
@@ -91,7 +97,15 @@ class _InitialScreenState extends State<InitialScreen> {
                                 Padding(
                                   padding: const EdgeInsets.all(15.0),
                                   child: Text(
-                                    "ATUAL: R\$ ${snapshot.data![1]}",
+                                    "GASTOS: R\$ ${snapshot.data![1]}",
+                                    overflow: TextOverflow.ellipsis,
+                                    style: const TextStyle(color: Colors.white),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.all(15.0),
+                                  child: Text(
+                                    "ATUAL: R\$ ${snapshot.data![2]}",
                                     overflow: TextOverflow.ellipsis,
                                     style: const TextStyle(color: Colors.white),
                                   ),

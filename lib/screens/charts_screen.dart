@@ -73,7 +73,7 @@ class _ChartScreenState extends State<ChartScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        PieChart(nome: "Item", data: data),
+                        PieChart(nome: "Gasto", data: data),
                       ],
                     );
                   } else {

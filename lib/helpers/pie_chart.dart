@@ -12,7 +12,7 @@ class PieChart extends StatelessWidget {
     return SfCircularChart(
       legend: Legend(
         textStyle: const TextStyle(fontSize: 13),
-        isVisible: true,
+        isVisible: false,
         height: '100%',
         overflowMode: LegendItemOverflowMode.wrap,
         position: LegendPosition.bottom,
